@@ -1,33 +1,37 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import CardUsuario from "./components/CardUsuario"
+import Comentario from "./components/Comentario"
+import ListaDeProdutos from "./components/ListaDeProdutos"
+import Painel from "./components/Painel"
+
 
 function App() {
-  const [count, setCount] = useState(0)
+
+
+const produtos = [
+  { nome: "Camiseta", preco: 49.9, emEstoque: true },
+  { nome: "Calça Jeans", preco: 89.9, emEstoque: false },
+  { nome: "Tênis", preco: 199.9, emEstoque: true },
+];
+
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <CardUsuario nome="Adiministrador" tipoUsuario="admin" />
+      <CardUsuario nome="Nilce" tipoUsuario="visitante" />
+      <CardUsuario nome="Eric" tipoUsuario="editor" />
+      <Comentario autor="Eric" children="Olá mundo!" revisado = {true} />
+      <Comentario autor="Nilce" children="Olá mundo!" revisado = {false} />
+      <Comentario autor="Professor" children="Não use IA" revisado = {true} />
+      <Painel titulo="Eric">
+        <img src="https://avatars.githubusercontent.com/u/179408451?v=4" alt="Foto do Perfil" height={100} width={100}/>
+      </Painel>
+      <Painel titulo="Nilce">
+        <ul>
+          <li>Exemplo 1</li>
+          <li>Exemplo 2</li>
+        </ul>
+      </Painel>
+      <ListaDeProdutos produtos={produtos} />
     </>
   )
 }
