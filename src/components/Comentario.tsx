@@ -1,3 +1,5 @@
+import styles from "./styles.module.css"
+
 type Props = {
     autor: string;
     children: string;
@@ -7,8 +9,8 @@ type Props = {
 function Comentario(props: Props) {
     return(
         <>
-        <h2>{props.autor}</h2>
-        {props.revisado ? <p>{props.children}</p> : <p>Comentário aguardando revisão</p>}
+        <h2 className={styles.container}>{props.autor}</h2>
+        {props.revisado ? <p className={styles.container}>{props.children}</p> : <p className={styles.container}>Comentário aguardando revisão</p>}
         </>
     )
 }
