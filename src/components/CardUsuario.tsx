@@ -1,6 +1,6 @@
 type Props = {
     nome: string;
-    tipoUsuario: string;
+    tipoUsuario: "admin" | "visitante" | "editor";
 }
 
 function CardUsuario (props: Props) {
