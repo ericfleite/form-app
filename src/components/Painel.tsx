@@ -8,7 +8,7 @@ type Props = {
 function Painel (props: Props){
     return(
         <>
-        <h2>{props.titulo}</h2>
+        <h2 style={{textAlign: "center"}}>{props.titulo}</h2>
         {props.children}
         </>
     )
